@@ -1,0 +1,19 @@
+<h1>Login</h1>
+
+<% if @error %>
+  <p>wrong username or password bro</p>
+<% end %>
+
+
+
+<%= form_for :session, url: sessions_path, method: :post do |f| %>
+  <div>Email</div>
+  <input type="text" name="email">
+
+  <br>
+  <div>Password</div>
+  <input type="password" name="password">
+  <br>
+
+  <input type="submit" value="Login">
+<% end %>

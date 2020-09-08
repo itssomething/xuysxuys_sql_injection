@@ -1,0 +1,10 @@
+<h1>Welcome <%= @user.name %></h1>
+<%= link_to "Logout", session_path(@user), method: :delete %>
+
+<br>
+<h2>Action<h2>
+<% if @user.role == "admin" %>
+  <button style="cursor: pointer"><h3 style="color: red">Delete all users and summon satan :)<h3></button>
+<% else %>
+  <h3><i>A hidden function that only admin can access</i></h3>
+<% end %>
