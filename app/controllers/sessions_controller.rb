@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.where("email = '" + params[:email] + "' and password = '" + params[:password] + "'").first
+    @user = User.find_by_sql("select users.* from users where email = '" + params[:email] + "' and password = '" + params[:password] + "' limit 1").first
 
-    if @user
+    if @user.present?
       session[:user_id] = @user.id
       redirect_to home_index_path
     else
