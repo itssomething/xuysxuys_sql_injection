@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.where("email = '#{params[:email]}' and password = '#{params[:password]}'").first
+    @user = User.where("email = '" + params[:email] + "' and password = '" + params[:password] + "'").first
 
     if @user
       session[:user_id] = @user.id
