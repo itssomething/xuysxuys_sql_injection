@@ -15,4 +15,4 @@
   )
 end
 
-User.create!(email: "admin@email.com", name: "Admin", role: "admin")
+User.create!(email: "admin@admin.com", name: "Admin", role: "admin", password: "123456")
